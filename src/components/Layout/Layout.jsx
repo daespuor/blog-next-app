@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 
-import Seo from "../SEO";
+import Seo from "../Seo";
 import Header from "../Header";
 import Footer from "../Footer";
 
