@@ -12,13 +12,13 @@ function Navbar() {
           width={128}
           height={100}
         />
-        <h1
+        <small
           sx={{
             marginTop: 0,
           }}
         >
           Ninja Blog
-        </h1>
+        </small>
       </div>
       <Link href="/">
         <a>Home</a>

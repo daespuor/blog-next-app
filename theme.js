@@ -7,21 +7,22 @@ const theme = {
       maxWidth: "960px",
       margin: "0 auto",
     },
-    card: {
+    postPreview: {
       boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
       border: "1px solid",
       borderColor: "muted",
       borderRadius: "4px",
       p: 2,
+      marginBottom: "10px",
     },
-    page: {
-      width: "100%",
-      maxWidth: "960px",
-      m: 0,
-      mx: "auto",
+    hero: {
+      padding: "2rem",
+      backgroundColor: "#c4c4c4",
+      border: "1px solid grey",
+      borderRadius: ".5rem",
     },
     nav: {
-      margin: "10px auto 80px",
+      margin: "10px auto 10px",
       padding: "10px 0",
       display: "flex",
       justifyContent: "flex-end",
@@ -32,6 +33,19 @@ const theme = {
       },
       "& .logo": {
         marginRight: "auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      },
+    },
+    signInButton: {
+      background: "#000",
+      color: "#fff",
+      borderRadius: ".5em",
+      padding: "1.5rem",
+      cursor: "pointer",
+      "& svg": {
+        marginRight: "1em",
       },
     },
     footer: {
@@ -41,21 +55,6 @@ const theme = {
       marginTop: "60px",
       color: "#777",
       borderTop: "1px solid #eaeaea",
-    },
-    a: {
-      color: "#333",
-      textDecoration: "none",
-      cursor: "pointer",
-    },
-    primaryButton: {
-      display: "block",
-      width: "150px",
-      padding: "8px 0",
-      margin: "20px auto",
-      background: "#4979ff",
-      borderRadius: "4px",
-      color: "white",
-      textAlign: "center",
     },
   },
   styles: {

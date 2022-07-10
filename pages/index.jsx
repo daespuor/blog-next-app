@@ -2,8 +2,10 @@ import React from "react";
 import Layout from "../src/components/Layout";
 import { useRouter } from "next/router";
 import { Button } from "theme-ui";
+import { home } from "../content";
+import Hero from "../src/components/Hero";
 
-export default function IndexPage() {
+export default function IndexPage({ content }) {
   const router = useRouter();
 
   function goToPosts() {
@@ -12,14 +14,32 @@ export default function IndexPage() {
 
   return (
     <Layout title="Ninja Blog | Home">
-      <h2 sx={{ color: "#333", paddingBottom: "20px", textAlign: "center" }}>
-        Home
-      </h2>
-      <p sx={{ color: "#777" }}>Lorem ipsum</p>
-      <p sx={{ color: "#777" }}>Lorem ipsum</p>
-      <Button variant="primary" onClick={goToPosts} sx={{ mx: "auto" }}>
-        Posts
-      </Button>
+      <Hero hero={content.hero} />
+      <section>
+        {content.features.map(function toFeature(feature) {
+          return (
+            <article>
+              <h3>{feature.title}</h3>
+              <p>{feature.body}</p>
+            </article>
+          );
+        })}
+      </section>
     </Layout>
   );
 }
+
+export function getStaticProps(ctx) {
+  return {
+    props: {
+      content: ctx.preview ? home.draft : home.published,
+    },
+  };
+}
+
+IndexPage.defaultProps = {
+  content: {
+    hero: { title: "default title", body: "Default body" },
+    features: { title: "default title", body: "Default body" },
+  },
+};
