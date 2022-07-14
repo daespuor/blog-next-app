@@ -2,9 +2,20 @@
 
 import GithubIcon from "../src/components/githubIcon";
 import Layout from "../src/components/Layout";
+import { signIn, useSession } from "next-auth/react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Signin = () => {
+  const { data: session } = useSession();
+  const router = useRouter();
   const Icon = GithubIcon;
+
+  useEffect(() => {
+    if (session) {
+      router.push("/app");
+    }
+  }, [session, router]);
 
   return (
     <Layout title="Ninja Blog | Sign in">
@@ -15,7 +26,7 @@ const Signin = () => {
         <button
           sx={{ variant: "containers.signInButton" }}
           type="button"
-          onClick={() => {}}
+          onClick={() => signIn("github")}
         >
           <Icon />
           Sign in using github

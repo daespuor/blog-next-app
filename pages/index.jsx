@@ -1,17 +1,9 @@
 import React from "react";
 import Layout from "../src/components/Layout";
-import { useRouter } from "next/router";
-import { Button } from "theme-ui";
 import { home } from "../content";
 import Hero from "../src/components/Hero";
 
 export default function IndexPage({ content }) {
-  const router = useRouter();
-
-  function goToPosts() {
-    router.push("/posts");
-  }
-
   return (
     <Layout title="Ninja Blog | Home">
       <Hero hero={content.hero} />

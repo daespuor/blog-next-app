@@ -28,7 +28,7 @@ const theme = {
       justifyContent: "flex-end",
       alignItems: "flex-end",
       borderBottom: "1px solid #ddd",
-      "& a": {
+      "& a, button": {
         marginLeft: "12px",
       },
       "& .logo": {
@@ -55,6 +55,18 @@ const theme = {
       marginTop: "60px",
       color: "#777",
       borderTop: "1px solid #eaeaea",
+    },
+  },
+  alerts: {
+    error: {
+      bg: "muted",
+      color: "#000",
+    },
+  },
+  buttons: {
+    secondary: {
+      color: "background",
+      bg: "secondary",
     },
   },
   styles: {
